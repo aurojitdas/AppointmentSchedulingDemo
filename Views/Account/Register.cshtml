@@ -41,7 +41,9 @@
     <div class="form-group row">
         <label class="col-md-2" asp-for="roleName"></label>
         <div class="col-md-10">
-            <input asp-for="roleName" asp-items="@AppointmentScheduling1.Helper.Roles.getRolesDropDown()"class="form-control" />
+            <select asp-for="roleName" asp-items="@AppointmentScheduling1.Helper.Roles.getRolesDropDown()"class="form-control">
+
+            </select>
             <span asp-validation-for="roleName" class="text-danger"></span>
         </div>
     </div>
@@ -56,3 +58,9 @@
     </p>
 
 </form>
+
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
