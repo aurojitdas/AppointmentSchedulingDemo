@@ -13,6 +13,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(Options => Options.UseSqlSer
 //passing application user bcz we are not using the default DB table for IdentityUser
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>();
 
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -29,6 +30,7 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+app.UseAuthentication();    //Used for managing user authentication.
 
 app.MapControllerRoute(
     name: "default",
